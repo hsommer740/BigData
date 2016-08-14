@@ -8,6 +8,6 @@ The repository hosts my R code and relevant documentation files. The source for 
 Note: All data should be extracted in the same folder, remain un-compressed and have no names altered.
 
 The file `CodeBook.md` describes the variables, the data, and any transformations needed to clean the data.
-The file `run_analysis.R` contains all the code to perform the analyses described in the 5 steps. They can be launched in RStudio by just importing the file.
+The file `run_analysis.R` contains all the code to perform the analyses described in 5 easy steps.
 
 The output of the 5th step is called `clean_data.txt`.
