@@ -1,12 +1,12 @@
 # Introduction to script: 
 
-The script `run_analysis.R`performs the 5 steps described in the course project's definition.
+The script labelled `run_analysis.R`performs the 5 steps described in the course project's definition.
 
-* First, all the similar data is merged using the `rbind()` function. By similar, we address those files having the same number of columns and referring to the same entities.
-* Then, only those columns with the mean and standard deviation measures are taken from the whole dataset. After extracting these columns, they are given the correct names, taken from `features.txt`.
-* As activity data is addressed with values 1:6, we take the activity names and IDs from `activity_labels.txt` and they are substituted in the dataset.
-* On the whole dataset, those columns with vague column names are corrected.
-* Finally, we generate a new dataset with all the average measures for each subject and activity type (30 subjects * 6 activities = 180 rows). The output file is called `averages_data.txt`, and uploaded to this repository.
+1) Data with the same numbrr of columns and entities are merged using the `rbind()` function.
+2) Then, column mean and standard deviation measures are calculated where possible from whole dataset. After extracting these columns, they are given the correct names, taken from `features.txt`.
+3) Activity data is given values 1:6, while the activity names and IDs are extracted from `activity_labels.txt` and then substituted in the dataset.
+4) Columns with vague column names are then corrected.
+5) Finally, we generate a new dataset with all the average measures for each subject and activity type (30 subjects * 6 activities = 180 rows). The output file is called `averages_data.txt`. Thde filke has been uploaded to the repository.
 
 # Here is an explanation of the variables included in the analysis:
 
