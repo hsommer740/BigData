@@ -1,16 +1,25 @@
+
+## Henrik Sommer
+## 8/14/2016
+
+rm(list=ls())
+
 library(plyr)
+
+#set working directory to the location where the UCI HAR Dataset was unzipped
+setwd('/Users/henriksommer/Downloads/UCI HAR Dataset/');
 
 # Step 1
 # Merge the training and test sets to create one data set
 ###############################################################################
 
-x_train <- read.table("train/X_train.txt")
-y_train <- read.table("train/y_train.txt")
-subject_train <- read.table("train/subject_train.txt")
+x_train <- read.table('./train/x_train.txt')
+y_train <- read.table('./train/y_train.txt')
+subject_train <- read.table('./train/subject_train.txt')
 
-x_test <- read.table("test/X_test.txt")
-y_test <- read.table("test/y_test.txt")
-subject_test <- read.table("test/subject_test.txt")
+x_test <- read.table('./test/x_test.txt')
+y_test <- read.table('./test/y_test.txt')
+subject_test <- read.table('./test/subject_test.txt')
 
 # create 'x' data set
 x_data <- rbind(x_train, x_test)
@@ -64,6 +73,6 @@ all_data <- cbind(x_data, y_data, subject_data)
 ###############################################################################
 
 # 66 <- 68 columns but last two (activity & subject)
-averages_data <- ddply(all_data, .(subject, activity), function(x) colMeans(x[, 1:66]))
+clean_data <- ddply(all_data, .(subject, activity), function(x) colMeans(x[, 1:66]))
 
-write.table(averages_data, "averages_data.txt", row.name=FALSE)
+write.table(clean_data, "clean_data.txt", row.name=FALSE)
